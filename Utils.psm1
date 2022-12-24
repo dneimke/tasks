@@ -10,8 +10,7 @@ function Write-File {
     )
 
     Write-Log -Message "Running Write-File with content: $Content"
-
-    $Content | Out-File -FilePath $Filepath
+    Set-Content -Path $Filepath -Value $Content
 }
 
 function Speak($Word) {
