@@ -11,11 +11,11 @@ Describe "Unit testing the Utils" {
 
 Describe "Write-File tests" {
     
-    # It 'Writes a file' {
-    #     Mock -CommandName Set-Content -MockWith {} -ModuleName Utils
+    It 'Writes a file' {
+        $testPath = "$($TestDrive)\test.txt"
 
-    #     Write-File -Content "This is the content" -Filepath "C:\temp\tasks\test-file.txt"
+        Write-File -Content "This is the content" -Filepath $testPath
 
-    #     Should -Invoke -CommandName Set-Content -Times 1 -Exactly
-    # }
+        $testPath | Should -Exist
+    }
 }
