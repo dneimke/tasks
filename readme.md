@@ -6,3 +6,9 @@ https://dev.to/azure/test-your-powershell-code-with-pester-4hlc
 
 Examples of advanced usage of Pester e.g. running Unit, Integration, and Acceptance tests
 https://www.red-gate.com/simple-talk/sysadmin/powershell/advanced-testing-of-your-powershell-code-with-pester/
+
+Should Operators
+https://pester.dev/docs/assertions/
+
+Custom Assertions
+https://pester.dev/docs/assertions/custom-assertions

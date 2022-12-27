@@ -1,5 +1,5 @@
 BeforeAll {
-    . $PSCommandPath.Replace('.Tests.ps1', '.ps1')
+    . .\Public\Get-Planet.ps1
 }
 
 Describe "Get-Planet" {

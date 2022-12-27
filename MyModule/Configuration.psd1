@@ -1,0 +1,3 @@
+@{
+    WorkingFolder = "\temp\data"
+}
