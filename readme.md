@@ -1,14 +1,10 @@
-Pester on Github (example showing build server integration and code coverage reporting)
-https://github.com/pester/Pester
+## Using Pester for testing PS
+- [Pester on Github](https://github.com/pester/Pester) (example showing build server integration and code coverage reporting)
+- [Mocking](https://dev.to/azure/test-your-powershell-code-with-pester-4hlc)
+- [Advanced usage](https://www.red-gate.com/simple-talk/sysadmin/powershell/advanced-testing-of-your-powershell-code-with-pester/) e.g. running Unit, Integration, and Acceptance tests
+- [Should Operators](https://pester.dev/docs/assertions/) and [Custom Assertions](
+https://pester.dev/docs/assertions/custom-assertions)
 
-Example showing mocking for side-effects
-https://dev.to/azure/test-your-powershell-code-with-pester-4hlc
-
-Examples of advanced usage of Pester e.g. running Unit, Integration, and Acceptance tests
-https://www.red-gate.com/simple-talk/sysadmin/powershell/advanced-testing-of-your-powershell-code-with-pester/
-
-Should Operators
-https://pester.dev/docs/assertions/
-
-Custom Assertions
-https://pester.dev/docs/assertions/custom-assertions
+## Useful Github repos
+- [AtlassianPS/Configuration](https://github.com/AtlassianPS/Configuration)
+- [AtlassianPS/JiraPS](https://github.com/AtlassianPS/JiraPS)

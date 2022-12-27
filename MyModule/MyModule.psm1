@@ -4,32 +4,6 @@ function Get-Config {
     Import-Configuration
 }
 
-function Write-File {
-    <#
-       .SYNOPSIS
-       The Write-DateFile function writes the input message to a target file.
-    #>
-    
-    param (
-        [string] $Content,
-        [string] $Path
-    )
-
-    Write-Log -Message "Running Write-File with content: $Content"
-    Set-Content -Path $Path -Value $Content
-}
-
-
-
-function Write-Log {
-    param (
-        [string] $Message
-    )
-
-    Write-Host $Message
-}
-
-
 $PublicFunctions = @( Get-ChildItem -Path "$($PSScriptRoot)\..\Public\*.ps1" -ErrorAction SilentlyContinue )
 
 # Dot source the functions
