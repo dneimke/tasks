@@ -12,4 +12,5 @@ jobs:
       - name: Run Pester tests
         shell: pwsh
         run: |
+          Install-Module Configuration -AllowClobber
           Invoke-Pester -Passthru
