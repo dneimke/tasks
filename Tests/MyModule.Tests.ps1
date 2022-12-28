@@ -14,3 +14,12 @@ Describe "Write-File tests" {
         $testPath | Should -Exist
     }
 }
+
+Describe "Configuration tests" {
+    
+    It 'Can read configuration' {
+        $config = Get-Config
+
+        $config.WorkingFolder | Should -Be "\temp\data"
+    }
+}

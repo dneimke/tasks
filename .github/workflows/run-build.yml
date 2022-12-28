@@ -4,7 +4,7 @@ on: push
 
 jobs:
   pester-test:
-    name: Pester test
+    name: Pester tests
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -13,4 +13,4 @@ jobs:
         shell: pwsh
         run: |
           Install-Module Configuration -AllowClobber -Force
-          Invoke-Pester -Passthru
+          Invoke-Pester -Output Detailed -Passthru
