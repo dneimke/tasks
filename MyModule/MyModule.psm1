@@ -5,9 +5,10 @@ function Get-Config {
 }
 
 $PublicFunctions = @( Get-ChildItem -Path "$($PSScriptRoot)\..\Public\*.ps1" -ErrorAction SilentlyContinue )
+$PrivateFunctions = @( Get-ChildItem -Path "$($PSScriptRoot)\..\Private\*.ps1" -ErrorAction SilentlyContinue )
 
 # Dot source the functions
-foreach ($file in @($PublicFunctions)) {
+foreach ($file in @($PublicFunctions + $PrivateFunctions)) {
     try {
         . $file.FullName
     }
@@ -23,4 +24,5 @@ foreach ($file in @($PublicFunctions)) {
 }
 
 Export-ModuleMember -Function $PublicFunctions.BaseName -Alias *
+Export-ModuleMember -Function $PrivateFunctions.BaseName -Alias *
 Export-ModuleMember -Function Get-Config, Write-File, Write-Log

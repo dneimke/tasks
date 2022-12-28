@@ -1,5 +1,5 @@
 BeforeAll {
-    . .\Public\Write-File.ps1
+    . .\Private\Write-File.ps1
 }
 
 Describe "Test-Task" {
