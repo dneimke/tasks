@@ -1,0 +1,5 @@
+{
+    "SourceFolder": "\\temp\\source-folder",
+    "TargetFolder": "\\temp\\target-folder",
+    "ProcessName": "CalculatorApp"
+}
