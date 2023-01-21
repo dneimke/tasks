@@ -1,4 +1,4 @@
-# Release Management
+# HelperTasksCore
 
 [![CI Tests](https://github.com/dneimke/tasks/actions/workflows/run-build.yml/badge.svg)](https://github.com/dneimke/tasks/actions/workflows/run-build.yml)
 
@@ -17,7 +17,7 @@ per: [The PowerShell Best Practices and Style Guide](https://github.com/PoshCode
 
 ## Install dependencies
 
-The `ReleaseManagementCore` module has the following dependencies that need to be installed on your development machine.
+The `HelperTasksCore` module has the following dependencies that need to be installed on your development machine.
 
 Note: Use the scope of _CurrentUser_ to avoid needing administrator privileges when installing modules.
 
@@ -37,7 +37,7 @@ Invoke-Pester -Output Detailed
 You can also run static code analysis checks locally by running the following command.
 
 ```ps
-Invoke-ScriptAnalyzer -Path .\ReleaseMangementCore\ -Recurse
+Invoke-ScriptAnalyzer -Path .\HelperTasksCore\ -Recurse
 ```
 
 ## Running the samples
@@ -66,7 +66,7 @@ Test that the `TargetFolder` is not created by starting `Calculator` and re-runn
 
 ## Deployment
 
-The `ReleaseManagementCore` module can be installed by placing the module in a location specified in
+The `HelperTasksCore` module can be installed by placing the module in a location specified in
 `$env:PSModulePath`.
 
 You can run the following command to get a list of the valid module locations:

@@ -38,6 +38,8 @@ function Move-DeploymentFolder {
     }
 
     Process {
+        Write-Host "Module message is $($script:moduleMessage)"
+
         $result = Find-RunningProcess -Name $ProcessName
 
         if ($result -eq $true) {

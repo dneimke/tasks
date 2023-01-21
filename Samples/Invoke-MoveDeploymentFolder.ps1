@@ -1,4 +1,4 @@
-Import-Module ReleaseManagementCore -Force
+Import-Module HelperTasksCore -Force
 
 $config = Get-Config -Path ./Invoke-MoveDeploymentFolder.json
 

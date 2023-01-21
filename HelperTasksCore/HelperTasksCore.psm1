@@ -1,3 +1,7 @@
+
+$script:moduleMessage = "Hello world"
+
+
 $PublicScripts = @( Get-ChildItem -Path "$($PSScriptRoot)\Public\*.ps1" -ErrorAction SilentlyContinue )
 $PrivateScripts = @( Get-ChildItem -Path "$($PSScriptRoot)\Private\*.ps1" -ErrorAction SilentlyContinue )
 
