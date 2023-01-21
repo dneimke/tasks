@@ -1,5 +1,5 @@
 BeforeAll {
-    Import-Module ./ReleaseManagementCore -Force
+    Import-Module .\ReleaseManagementCore -Force
 
     $SourcePath = "TestDrive:\$([Guid]::NewGuid())"
     New-Item -Path $SourcePath -ItemType Directory
