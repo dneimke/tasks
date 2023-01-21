@@ -2,9 +2,9 @@
 
 [![CI Tests](https://github.com/dneimke/tasks/actions/workflows/run-build.yml/badge.svg)](https://github.com/dneimke/tasks/actions/workflows/run-build.yml)
 
-This repo is used for handy scripts and tasks and other reusable PowerShell code and artifacts for our DevOps processes.
+This repo is used as an example of 'good practices' for creating reusable PowerShell code that is modular, configurable, and tested.
 
-We can use this project to write scripts and have them tested using Pester. This gives us increased confidence about the quality of the code that we are using and sharing.
+Use this project as a template for writing PowerShell code that increases confidence and is of good quality.
 
 ## Best Practices and Style Guide
 
@@ -18,13 +18,12 @@ Note: Use the scope of _CurrentUser_ to avoid needing administrator privileges w
 
 ```ps
 Install-Module Pester -Force -Scope CurrentUser -SkipPublisherCheck
-Install-Module -Name PSScriptAnalyzer -Force
+Install-Module -Name PSScriptAnalyzer -Force -Scope CurrentUser
 ```
 
 ## Running tests
 
-The module is covered by unit tests written using [Pester](https://github.com/pester/Pester). You can invoke the tests from the root folder
-by running the following command.
+The module is covered by unit tests written using [Pester](https://github.com/pester/Pester). You can invoke the tests from the root folder by running the following command.
 
 ```ps
 Invoke-Pester -Output Detailed
