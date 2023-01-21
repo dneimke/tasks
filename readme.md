@@ -1,5 +1,7 @@
 # Release Management
 
+[![CI Tests](https://github.com/dneimke/tasks/actions/workflows/run-build.yml/badge.svg)](https://github.com/dneimke/tasks/actions/workflows/run-build.yml)
+
 This repo is used for handy scripts and tasks and other reusable PowerShell code and artifacts for our DevOps processes.
 
 We can use this project to write scripts and have them tested using Pester. This gives us increased confidence about the quality of the code that we are using and sharing.
@@ -54,16 +56,16 @@ You can then run the following command to invoke the sample
 .\Invoke-MoveDeploymentFolder.ps1
 ```
 
-After running the command, the `SourceFolder` should be copied to the `TargetFolder` location. 
+After running the command, the `SourceFolder` should be copied to the `TargetFolder` location.
 
 Test that the `TargetFolder` is not created by starting `Calculator` and re-running the command.
 
 ## Deployment
 
-The `ReleaseManagementCore` module can be installed by placing the module in a location specified in 
+The `ReleaseManagementCore` module can be installed by placing the module in a location specified in
 `$env:PSModulePath`.
 
-You can run the following command to get a list of the valid module locations: 
+You can run the following command to get a list of the valid module locations:
 
 ```ps
  $env:PSModulePath -Split ';'
