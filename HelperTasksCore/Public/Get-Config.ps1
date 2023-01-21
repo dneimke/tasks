@@ -14,11 +14,7 @@ function Get-Config {
     )
 
     Begin {
-        $Location = $MyInvocation.MyCommand.Path
-        $ScriptName = $MyInvocation.MyCommand.Name
-        $Caller = $MyInvocation.MyCommand.PSCommandPath
-
-        WriteLog -Message "Starting $ScriptName at $Location. Called from $Caller" -LogLevel Verbose
+        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Function started"
     }
 
     Process {
@@ -27,6 +23,6 @@ function Get-Config {
     }
 
     End {
-        WriteLog -Message "Completed $ScriptName" -LogLevel Verbose
+        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Complete"
     }
 }
