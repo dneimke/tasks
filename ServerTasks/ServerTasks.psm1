@@ -1,5 +1,5 @@
 #region Configuration
-$script:loggingConfig = ("{0}/HelperTasks/loggingConfig" -f [Environment]::GetFolderPath('ApplicationData'))
+$script:loggingConfig = ("{0}/ServerTasks/loggingConfig" -f [Environment]::GetFolderPath('ApplicationData'))
 
 if (-not (Test-Path $script:loggingConfig)) {
     $null = New-Item -Path $script:loggingConfig -ItemType File -Force

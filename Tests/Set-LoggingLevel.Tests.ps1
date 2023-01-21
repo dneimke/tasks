@@ -1,5 +1,5 @@
 BeforeAll {
-    Import-Module .\HelperTasksCore -Force
+    Import-Module .\ServerTasks -Force
 }
 
 Describe "Set Logging-Level" {

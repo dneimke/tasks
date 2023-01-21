@@ -1,5 +1,5 @@
 BeforeAll {
-    Import-Module .\HelperTasksCore -Force
+    Import-Module .\ServerTasks -Force
 
     $SourcePath = "TestDrive:\$([Guid]::NewGuid())"
     New-Item -Path $SourcePath -ItemType Directory
@@ -8,7 +8,7 @@ BeforeAll {
 Describe "Move deployment folder" {
     Context "When the process is running" {
         BeforeEach {
-            Mock -CommandName Find-RunningProcess -ModuleName "HelperTasksCore" -MockWith { return $true }
+            Mock -CommandName Find-RunningProcess -ModuleName "ServerTasks" -MockWith { return $true }
         }
 
         It "Given a process is running, the deployment folder is not moved" {
@@ -23,7 +23,7 @@ Describe "Move deployment folder" {
 
     Context "When the process is not running" {
         BeforeEach {
-            Mock -CommandName Find-RunningProcess -ModuleName "HelperTasksCore" -MockWith { return $false }
+            Mock -CommandName Find-RunningProcess -ModuleName "ServerTasks" -MockWith { return $false }
         }
 
         It "Given a process is not running, the deployment folder is moved" {
