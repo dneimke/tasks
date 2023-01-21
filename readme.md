@@ -2,9 +2,14 @@
 
 [![CI Tests](https://github.com/dneimke/tasks/actions/workflows/run-build.yml/badge.svg)](https://github.com/dneimke/tasks/actions/workflows/run-build.yml)
 
-This repo is used as an example of 'good practices' for creating reusable PowerShell code that is modular, configurable, and tested.
+Tasks is a project to demonstrate 'good practices' when working with PowerShell. It includes:
 
-Use this project as a template for writing PowerShell code that increases confidence and is of good quality.
+- Demonstration of using modules to bootstrap loading of dependencies
+- Layout of public and private functions
+- Testing using [Pester](https://pester.dev/)
+- Loading configuration using [Configuration](https://github.com/AtlassianPS/Configuration)
+- Build and test using [Github actions](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-powershell)
+
 
 ## Best Practices and Style Guide
 
@@ -84,6 +89,22 @@ C:\Program Files (x86)\Microsoft SQL Server\150\Tools\PowerShell\Modules\
 The first location is a user specific location and is ideal to use for development purposes. The next 3 locations are also suitable paths to use.
 
 After placing the module into a valid module location, you can import the module and use it from any
-script running on the machine:
+script running on the machine.
+
+## Useful links
+
+**Creating and working with modules**
+- [PowerShellGallery Publishing Guidelines and Best Practices](https://learn.microsoft.com/en-us/powershell/scripting/gallery/concepts/publishing-guidelines?view=powershell-7.3)
+- [Understanding and Building PowerShell Modules](https://adamtheautomator.com/powershell-modules)
+
+**Using Pester for testing PS**
+- [Pester on Github](https://github.com/pester/Pester) (example showing build server integration and code coverage reporting)
+- [Mocking](https://dev.to/azure/test-your-powershell-code-with-pester-4hlc)
+- [Advanced usage](https://www.red-gate.com/simple-talk/sysadmin/powershell/advanced-testing-of-your-powershell-code-with-pester/) e.g. running Unit, Integration, and Acceptance tests
+- [Should Operators](https://pester.dev/docs/assertions/) and [Custom Assertions](
+https://pester.dev/docs/assertions/custom-assertions)
 
 
+**Useful Github repos**
+- [AtlassianPS/Configuration](https://github.com/AtlassianPS/Configuration)
+- [AtlassianPS/JiraPS](https://github.com/AtlassianPS/JiraPS)
