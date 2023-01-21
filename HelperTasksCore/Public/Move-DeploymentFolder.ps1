@@ -34,8 +34,6 @@ function Move-DeploymentFolder {
     }
 
     Process {
-        Write-Information "Module message is $($script:moduleMessage)" -InformationAction SilentlyContinue
-
         $result = Find-RunningProcess -Name $ProcessName
 
         if ($result -eq $true) {
