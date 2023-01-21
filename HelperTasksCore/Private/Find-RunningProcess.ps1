@@ -8,21 +8,15 @@ function Find-RunningProcess {
     )
 
     Begin {
-        $Location = $MyInvocation.MyCommand.Path
-        $ScriptName = $MyInvocation.MyCommand.Name
-        $Caller = $MyInvocation.MyCommand.PSCommandPath
-
-        WriteLog -Message "Starting $ScriptName at $Location. Called from $Caller" -LogLevel Verbose
+        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Function started"
     }
 
-
     Process {
-
         $process = Get-Process | Where-Object { $_.ProcessName -eq $Name }
         if ($process) { return $true } else { return $false }
     }
 
     End {
-        WriteLog -Message "Completed $ScriptName" -LogLevel Verbose
+        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Complete"
     }
 }

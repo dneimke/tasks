@@ -1,8 +1,6 @@
 BeforeAll {
     Import-Module .\HelperTasksCore -Force
 
-    Write-Host "From Tests: Module message is $($script:moduleMessage)"
-
     $SourcePath = "TestDrive:\$([Guid]::NewGuid())"
     New-Item -Path $SourcePath -ItemType Directory
 }

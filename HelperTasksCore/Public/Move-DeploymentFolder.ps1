@@ -30,15 +30,11 @@ function Move-DeploymentFolder {
     )
 
     Begin {
-        $Location = $MyInvocation.MyCommand.Path
-        $ScriptName = $MyInvocation.MyCommand.Name
-        $Caller = $MyInvocation.MyCommand.PSCommandPath
-
-        WriteLog -Message "Starting $ScriptName at $Location. Called from $Caller" -LogLevel Verbose
+        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Function started"
     }
 
     Process {
-        Write-Host "Module message is $($script:moduleMessage)"
+        Write-Information "Module message is $($script:moduleMessage)" -InformationAction SilentlyContinue
 
         $result = Find-RunningProcess -Name $ProcessName
 
@@ -56,6 +52,6 @@ function Move-DeploymentFolder {
     }
 
     End {
-        WriteLog -Message "Completed $ScriptName" -LogLevel Verbose
+        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Complete"
     }
 }

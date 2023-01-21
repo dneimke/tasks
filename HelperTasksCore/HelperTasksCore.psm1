@@ -1,4 +1,4 @@
-
+# Module scoped variable
 $script:moduleMessage = "Hello world"
 
 
