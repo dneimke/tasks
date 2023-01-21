@@ -1,5 +1,11 @@
-# Module scoped variable
-$script:moduleMessage = "Hello world"
+#region Configuration
+$script:loggingConfig = ("{0}/HelperTasks/loggingConfig" -f [Environment]::GetFolderPath('ApplicationData'))
+
+if (-not (Test-Path $script:loggingConfig)) {
+    $null = New-Item -Path $script:loggingConfig -ItemType File -Force
+    Set-Content -Value "Warning" -Path "$script:loggingConfig"
+}
+$script:LoggingLevel = [Uri](Get-Content $script:loggingConfig)
 
 
 $PublicScripts = @( Get-ChildItem -Path "$($PSScriptRoot)\Public\*.ps1" -ErrorAction SilentlyContinue )
