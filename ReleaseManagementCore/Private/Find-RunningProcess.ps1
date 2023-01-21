@@ -1,7 +1,5 @@
 
 function Find-RunningProcess {
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSReviewUnusedParameter',
-        Justification = 'False positive as rule does not scan child scopes')]
     [CmdletBinding()]
     [OutputType([bool])]
     param (
