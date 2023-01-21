@@ -81,7 +81,7 @@ C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
 C:\Program Files (x86)\Microsoft SQL Server\150\Tools\PowerShell\Modules\
 ```
 
-The first location is a user specific location but the following 3 locations are suitable paths to use.
+The first location is a user specific location and is ideal to use for development purposes. The next 3 locations are also suitable paths to use.
 
 After placing the module into a valid module location, you can import the module and use it from any
 script running on the machine:
