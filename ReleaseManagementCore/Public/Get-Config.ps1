@@ -1,5 +1,5 @@
 function Get-Config {
-    
+
     [CmdletBinding()]
     [OutputType([psobject])]
     param (
@@ -17,8 +17,8 @@ function Get-Config {
         $Location = $MyInvocation.MyCommand.Path
         $ScriptName = $MyInvocation.MyCommand.Name
         $Caller = $MyInvocation.MyCommand.PSCommandPath
-        
-        Write-Log -Message "Starting $ScriptName at $Location. Called from $Caller" -LogLevel Verbose
+
+        WriteLog -Message "Starting $ScriptName at $Location. Called from $Caller" -LogLevel Verbose
     }
 
     Process {
@@ -27,6 +27,6 @@ function Get-Config {
     }
 
     End {
-        Write-Log -Message "Completed $ScriptName" -LogLevel Verbose 
+        WriteLog -Message "Completed $ScriptName" -LogLevel Verbose
     }
 }

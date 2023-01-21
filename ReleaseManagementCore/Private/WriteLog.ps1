@@ -1,6 +1,6 @@
-function Write-Log {
+function WriteLog {
 
-    [CmdletBinding()] 
+    [CmdletBinding()]
     param (
         [Parameter(Mandatory = $true, Position = 0, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
@@ -12,11 +12,11 @@ function Write-Log {
     )
 
     Process {
-        
+
         switch ($LogLevel) {
             'Error' { Write-Error $Message }
             'Warning' { Write-Warning $Message }
-            'Information' { Write-Host $Message }
+            'Information' { Write-Information $Message }
             'Verbose' { Write-Verbose $Message }
             'Debug' { Write-Debug $Message }
             default { throw "Invalid log level: $_" }

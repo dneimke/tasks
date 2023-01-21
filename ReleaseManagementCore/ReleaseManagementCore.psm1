@@ -3,7 +3,7 @@ $PrivateScripts = @( Get-ChildItem -Path "$($PSScriptRoot)\Private\*.ps1" -Error
 
 # Dot source the functions
 foreach ($file in @($PublicScripts + $PrivateScripts)) {
-    
+
     try {
         . $file.FullName
     }

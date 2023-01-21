@@ -1,5 +1,5 @@
 BeforeAll {
-    Import-Module .\ReleaseManagementCore -Force
+    Import-Module ReleaseManagementCore -Force
 
     $SourcePath = "TestDrive:\$([Guid]::NewGuid())"
     New-Item -Path $SourcePath -ItemType Directory
@@ -12,12 +12,12 @@ Describe "Move deployment folder" {
         }
 
         It "Given a process is running, the deployment folder is not moved" {
-        
+
             $targetPath = "TestDrive:\$([Guid]::NewGuid())"
             $process = "dummy"
-            
+
             $result = Move-DeploymentFolder -SourceDir $SourcePath -TargetDir $targetPath -ProcessName $process
-            $result | Should -Be $false 
+            $result | Should -Be $false
         }
     }
 
@@ -27,12 +27,12 @@ Describe "Move deployment folder" {
         }
 
         It "Given a process is not running, the deployment folder is moved" {
-        
+
             $targetPath = "TestDrive:\$([Guid]::NewGuid())"
             $process = "dummy"
 
             $result = Move-DeploymentFolder -SourceDir $SourcePath -TargetDir $targetPath -ProcessName $process
-            $result | Should -Be $true 
+            $result | Should -Be $true
         }
     }
 }
