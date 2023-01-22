@@ -11,14 +11,14 @@ function Set-LoggingLevel {
     )
 
     begin {
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Function started"
+        Write-Log -Message "[$($MyInvocation.MyCommand.Name)] Function started" -Severity "Verbose"
     }
 
     process {
         $settings = Get-Settings
 
-        Write-Verbose "The settings file path is $($script:settingsPath)"
-        Write-Verbose "Old LoggingLevel: $($settings.Logging.Level ); New LoggingLevel: $($Level)"
+        Write-Log -Message "The settings file path is $($script:settingsPath)" -Severity "Verbose"
+        Write-Log -Message "Old LoggingLevel: $($settings.Logging.Level ); New LoggingLevel: $($Level)" -Severity "Verbose"
 
         $settings.Logging.Level = $Level
 
@@ -28,6 +28,6 @@ function Set-LoggingLevel {
     }
 
     end {
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Complete"
+        Write-Log -Message "[$($MyInvocation.MyCommand.Name)] Complete" -Severity "Verbose"
     }
 }

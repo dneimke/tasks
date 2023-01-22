@@ -1,3 +1,9 @@
+<#
+    .Description
+    Retrieves a JSON configuration file as a PSCustomObject from a designation
+    filepath.
+#>
+
 function Get-Config {
 
     [CmdletBinding()]
@@ -14,7 +20,7 @@ function Get-Config {
     )
 
     Begin {
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Function started"
+        Write-Log -Message "[$($MyInvocation.MyCommand.Name)] Function started" -Severity "Verbose"
     }
 
     Process {
@@ -23,6 +29,6 @@ function Get-Config {
     }
 
     End {
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Complete"
+        Write-Log -Message "[$($MyInvocation.MyCommand.Name)] Complete" -Severity "Verbose"
     }
 }

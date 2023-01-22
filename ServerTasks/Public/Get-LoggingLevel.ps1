@@ -5,17 +5,15 @@ function Get-LoggingLevel {
     param()
 
     begin {
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Function started"
+        Write-Log -Message "[$($MyInvocation.MyCommand.Name)] Function started" -Severity "Verbose"
     }
 
     process {
         $settings = Get-Settings
-        $level = $settings.Logging.Level
-        Write-Verbose "Returning a logging level of $level"
-        $level
+        $settings.Logging.Level
     }
 
     end {
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Complete"
+        Write-Log -Message "[$($MyInvocation.MyCommand.Name)] Complete" -Severity "Verbose"
     }
 }

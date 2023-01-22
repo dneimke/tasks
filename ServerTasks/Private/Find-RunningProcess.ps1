@@ -8,7 +8,7 @@ function Find-RunningProcess {
     )
 
     Begin {
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Function started"
+        Write-Log -Message "[$($MyInvocation.MyCommand.Name)] Function started" -Severity "Verbose"
     }
 
     Process {
@@ -17,6 +17,6 @@ function Find-RunningProcess {
     }
 
     End {
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Complete"
+        Write-Log -Message "[$($MyInvocation.MyCommand.Name)] Complete" -Severity "Verbose"
     }
 }

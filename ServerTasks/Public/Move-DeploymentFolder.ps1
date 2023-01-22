@@ -30,7 +30,7 @@ function Move-DeploymentFolder {
     )
 
     Begin {
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Function started"
+        Write-Log -Message "[$($MyInvocation.MyCommand.Name)] Function started" -Severity "Verbose"
     }
 
     Process {
@@ -45,11 +45,12 @@ function Move-DeploymentFolder {
         }
 
         Copy-Item -path $SourceDir -Destination $TargetDir -Recurse
+        Write-Log -Message "Successfully copied  $SourceDir to $TargetDir" -Severity "Information"
 
         return $true
     }
 
     End {
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Complete"
+        Write-Log -Message "[$($MyInvocation.MyCommand.Name)] Complete" -Severity "Verbose"
     }
 }

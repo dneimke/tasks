@@ -1,3 +1,11 @@
+<#
+    .Description
+    Retrieves the module settings as a PSCustomObject.
+
+    Note: don't use Write-Log in this function as it will cause recursive calls and
+    the application will hang.
+#>
+
 function Get-Settings {
 
     [CmdletBinding()]
@@ -6,14 +14,8 @@ function Get-Settings {
         [switch] $UseDefaults
     )
 
-    Begin {
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Function started"
-    }
-
     Process {
         $defaults = GetDefaults
-
-        Write-Verbose $defaults
 
         if($UseDefaults.IsPresent) { return $defaults }
         if(!(Test-Path $script:settingsPath))  { return $defaults }
@@ -42,10 +44,6 @@ function Get-Settings {
         Write-Verbose $defaults.Logging
 
         $defaults
-    }
-
-    End {
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Complete"
     }
 }
 
