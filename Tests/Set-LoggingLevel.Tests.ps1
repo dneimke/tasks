@@ -3,7 +3,7 @@ BeforeAll {
 }
 
 Describe "Set Logging-Level" {
-    Context "When the logging level is set to a valid level" {
+    Context "When setting a valid Log Level" {
         BeforeEach {
             $originalLevel = Get-LoggingLevel
         }
@@ -12,11 +12,39 @@ Describe "Set Logging-Level" {
             Set-LoggingLevel -Level $originalLevel
         }
 
-        It "The logging level is updated to the new value" {
+         It "Setting to Error updates as expected" {
+            Set-LoggingLevel -Level "Error"
+
+            $result = Get-LoggingLevel
+            $result | Should -Be "Error"
+        }
+
+        It "Setting to Information updates as expected" {
             Set-LoggingLevel -Level "Information"
 
             $result = Get-LoggingLevel
             $result | Should -Be "Information"
+        }
+
+        It "Setting to Warning updates as expected" {
+            Set-LoggingLevel -Level "Warning"
+
+            $result = Get-LoggingLevel
+            $result | Should -Be "Warning"
+        }
+
+        It "Setting to Verbose updates as expected" {
+            Set-LoggingLevel -Level "Verbose"
+
+            $result = Get-LoggingLevel
+            $result | Should -Be "Verbose"
+        }
+
+        It "Setting to Debug updates as expected" {
+            Set-LoggingLevel -Level "Debug"
+
+            $result = Get-LoggingLevel
+            $result | Should -Be "Debug"
         }
     }
 
