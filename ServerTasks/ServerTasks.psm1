@@ -1,11 +1,14 @@
 #region Configuration
-$script:loggingConfig = ("{0}/ServerTasks/loggingConfig" -f [Environment]::GetFolderPath('ApplicationData'))
+$moduleConfigPath = ("{0}/ServerTasks/global-config" -f [Environment]::GetFolderPath('ApplicationData'))
+$defaultSettingsPath = ("{0}/ServerTasks/settings" -f [Environment]::GetFolderPath('ApplicationData'))
 
-if (-not (Test-Path $script:loggingConfig)) {
-    $null = New-Item -Path $script:loggingConfig -ItemType File -Force
-    Set-Content -Value "Warning" -Path "$script:loggingConfig"
+if (-not (Test-Path $moduleConfigPath)) {
+    $null = New-Item -Path $moduleConfigPath -ItemType File -Force
+    Set-Content -Value $defaultSettingsPath -Path $moduleConfigPath
 }
-$script:LoggingLevel = [Uri](Get-Content $script:loggingConfig)
+
+$script:settingsPath = Get-Content $moduleConfigPath
+#endregion
 
 
 $PublicScripts = @( Get-ChildItem -Path "$($PSScriptRoot)\Public\*.ps1" -ErrorAction SilentlyContinue )

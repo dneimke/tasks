@@ -9,7 +9,10 @@ function Get-LoggingLevel {
     }
 
     process {
-        return $script:LoggingLevel
+        $settings = Get-Settings
+        $level = $settings.Logging.Level
+        Write-Verbose "Returning a logging level of $level"
+        $level
     }
 
     end {

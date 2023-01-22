@@ -38,7 +38,7 @@ Describe "Set Logging-Level" {
             $result | Should -Be $originalLevel
         }
 
-        It "throws exception when given $null" {
+        It "throws exception when given `$null" {
              { Set-LoggingLevel -Level $null } |
                 Should -Throw -ExceptionType ([Exception])
 
