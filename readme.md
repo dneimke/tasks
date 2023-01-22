@@ -9,12 +9,18 @@ Tasks is a project to demonstrate 'good practices' when working with PowerShell.
 - Testing using [Pester](https://pester.dev/)
 - Build and test using [Github actions](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-powershell)
 
-
 Logging and configuration are also implemented. Refer to the docs pages to learn more about the implementation of these.
 
-## Best Practices and Style Guide
+## Example usage
 
-per: [The PowerShell Best Practices and Style Guide](https://github.com/PoshCode/PowerShellPracticeAndStyle)
+Use the `ServerTasks` framework to implement your own task-based applications to get the benefits of logging, testing, configuration, and a modular architecture.
+
+Build your Public tasks and wrap them with controller tasks in a `\Tasks` folder and then call your tasks via:
+
+- Configured as Windows Scheduled Tasks
+- Octopus runbooks
+- From a PowerShell console on a host
+- From a CI build process
 
 ## Install dependencies
 
@@ -26,6 +32,8 @@ Note: Use the scope of _CurrentUser_ to avoid needing administrator privileges w
 Install-Module Pester -Force -Scope CurrentUser -SkipPublisherCheck
 Install-Module -Name PSScriptAnalyzer -Force -Scope CurrentUser
 ```
+
+Refer to [the docs](./docs/deployment.md) for additional information on deploying the ServerTasks module.
 
 ## Running tests
 
@@ -63,11 +71,8 @@ You can then run the following command to invoke the sample
 
 After running the command, the `SourceFolder` should be copied to the `TargetFolder` location.
 
-Test that the `TargetFolder` is not created by starting `Calculator` and re-running the command.
-
-## Deployment
-
-Refer to [the docs](./docs/deployment.md) for information on how to deploy the ServerTasks module.
+Test that the `TargetFolder` is not created when a given proces is running. Start `Calculator` and re-run the command. You should see that the
+source folder is not copied while the configured `ProcessName` process is running.
 
 ## Useful links
 
