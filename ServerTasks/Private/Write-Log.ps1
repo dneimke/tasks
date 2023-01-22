@@ -9,7 +9,7 @@ Function Write-Log()
 
         [Parameter()]
         [ValidateNotNullOrEmpty()]
-        [ValidateSet('Information','Warning','Error','Verbose')]
+        [ValidateSet('Information','Warning','Error','Verbose','Debug')]
         [string]$Severity = 'Information'
     )
 
@@ -35,7 +35,7 @@ Function Write-Log()
         }
 
         if ($Severity -eq "Information") {
-            if($level -eq "Information" -or $level -eq "Verbose") {
+            if($level -eq "Information" -or $level -eq "Verbose" -or $level -eq "Debug") {
                 Write-Host $Message
             }
             else {
@@ -44,7 +44,16 @@ Function Write-Log()
         }
 
         if ($Severity -eq "Verbose") {
-            if($level -eq "Verbose") {
+            if($level -eq "Verbose" -or $level -eq "Debug") {
+                Write-Host $Message -ForegroundColor Yellow
+            }
+            else {
+                return
+            }
+        }
+
+        if ($Severity -eq "Debug") {
+            if($level -eq "Debug") {
                 Write-Host $Message -ForegroundColor Yellow
             }
             else {
